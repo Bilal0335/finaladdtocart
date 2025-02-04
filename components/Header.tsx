@@ -10,10 +10,10 @@ import { IoIosSearch } from "react-icons/io";
 import { SheetSide } from "../components/Humburgur";
 // import Image from "next/image";
 // import { useAppSelector } from "@/app/(functionalty)/Store/hooks";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export default function Header() {
-  //   const cart = useSelector((state: any) => state.cart);
+  const cart = useSelector((state: any) => state.cart);
 
   return (
     <header className="w-full fixed bg-white z-10 top-0  h-[60px] md:h-[90px] flex justify-between  pr-2 items-center max-w-screen-2xl mx-auto">
@@ -48,14 +48,14 @@ export default function Header() {
         </div>
       </div>
       <div className="flex space-x-2 sm:space-x-4 ">
-        {/* <IoIosSearch className="text-xl  lg:hidden" /> */}
+        <IoIosSearch className="text-xl  lg:hidden" />
         <Link href={"/cart"} className="relative hidden lg:block">
           <IoCartOutline className="text-4xl  " />
-          {/* {cart.length > 0 && (
+          {cart.length > 0 && (
             <span className="absolute top-[-5px] bg-red-400  rounded-full text-white w-[20px] h-[20px] flex justify-center items-center p-1 text-sm right-0">
               {cart.length}
             </span>
-          )} */}
+          )}
         </Link>
 
         <MdOutlineAccountCircle className="text-4xl hidden lg:block" />
@@ -63,11 +63,11 @@ export default function Header() {
       <div className="flex items-center justify-center space-x-5 lg:hidden">
         <Link href={"/cart"} className="relative">
           <IoCartOutline className="text-4xl  " />
-          {/* {cart.length > 0 && (
+          {cart.length > 0 && (
             <span className="absolute top-[-5px] bg-red-400  rounded-full text-white w-[20px] h-[20px] flex justify-center items-center p-1 text-sm right-0">
               {cart.length}
             </span>
-          )} */}
+          )}
         </Link>
         <SheetSide />
       </div>
