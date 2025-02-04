@@ -2,14 +2,11 @@
 import { IProduct } from "@/app/utils/Types";
 import { Button } from "@/components/ui/button";
 import { Minus, Plus } from "lucide-react";
-// import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState } from "react";
-// import Link from "next/link";
 import { FaStar } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addtocart } from "../../Redux/features/cartSlice";
-// import { useSelector } from "react-redux";
 
 const star = [
   <FaStar key={1} />,
@@ -19,42 +16,9 @@ const star = [
   <FaStar key={5} />
 ];
 
-const product: IProduct[] = [
-  {
-    id: 1,
-    title: "Rustic Vase Set",
-    image: ["/img/image-1.png", "/img/image-2.png", "/img/image-3.png"], // Array of images
-    slug: "rustic-vase-set",
-    price: 210,
-    category: "sofa",
-    description:
-      "Bring the charm of nature into your home with the Rustic Vase Set...",
-    size: ["S", "M", "L", "XL"],
-    color: ["RED", "BLACK", "YELLOW"],
-    qty: 1,
-    discount: 10
-  },
-  {
-    id: 2,
-    title: "Timber Craft",
-    image: ["/img/image-2.png", "/img/image-3.png", "/img/image-3.png"], // Array of images
-    slug: "timber-craft",
-    price: 320,
-    category: "sofa",
-    description:
-      "Introducing TimberCraft—a collection that celebrates the timeless beauty...",
-    size: ["S", "M", "L", "XL"],
-    color: ["RED", "BLACK", "YELLOW"],
-    qty: 1,
-    discount: 30
-  }
-];
-
-// console.log("uuid", Math.floor(1000 + Math.random() * 9000));
-
 const SLugProduct = ({ params }: { params: { slug: string } }) => {
   const dispatch = useDispatch();
-  // const product: IProduct[] = useSelector((state: any) => state.product);
+  const product: IProduct[] = useSelector((state: any) => state.product);
   // Find the product based on slug
   const item: any = product.find((item) => item.slug === params.slug);
 
@@ -118,22 +82,10 @@ const SLugProduct = ({ params }: { params: { slug: string } }) => {
             (cartItem.price - (cartItem.price * cartItem.discount) / 100) *
               cartItem.qty}{" "}
         </span>
-        {/* <span className="bg-red-400 rounded-[10px]">
+        <span className="bg-red-400 rounded-[10px]">
           {cartItem.discount > 0 && <div>{`-${cartItem.discount}%`}</div>}
-        </span> */}
+        </span>
 
-        <div className="flex items-center space-x-2">
-          {/* <p className="font-bold">${cartItem.price}</p> */}
-          {/* {cartItem.discount && cartItem.discount > 0 && (
-            <span className="text-gray-400 line-through">
-              $
-              {(
-                cartItem.price -
-                (cartItem.price * cartItem.discount) / 100
-              ).toFixed(2)}
-            </span>
-          )} */}
-        </div>
         <p>{cartItem.description}</p>
         {/* color */}
         <p>SELECT COLOR</p>

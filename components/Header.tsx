@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { RiArrowDropDownLine } from "react-icons/ri";
+// import { RiArrowDropDownLine } from "react-icons/ri";
 
 import { MdOutlineAccountCircle } from "react-icons/md";
 import { IoCartOutline } from "react-icons/io5";
@@ -32,8 +32,8 @@ export default function Header() {
       <ul className="hidden lg:block ">
         <li className="flex space-x-4 ml-4 mt-2 items-center ">
           <Link href={`/`}>Home</Link>
-          <Link href={"/product"}>Products</Link>
-          <Link href={"/brand"}>Brands</Link>
+          <Link href={`/product`}>Products</Link>
+          <Link href={`/brand`}>Brands</Link>
         </li>
       </ul>
       {/* right */}

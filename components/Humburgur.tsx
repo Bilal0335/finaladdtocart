@@ -32,8 +32,8 @@ export function SheetSide() {
             <ul>
               <li className=" grid grid-cols-1 space-y-5 place-items-start">
                 <Link href={`/`}>Home</Link>
-                <Link href={"/products"}>Products</Link>
-                <Link href={"/brands"}>Brands</Link>
+                <Link href={"/product"}>Products</Link>
+                <Link href={"/brand"}>Brands</Link>
               </li>
             </ul>
           </SheetContent>

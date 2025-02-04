@@ -38,10 +38,10 @@ const CartPage = () => {
   }, 0);
 
   return (
-    <div className="mt-64">
+    <div className=" mt-24 flex flex-col lg:flex-row justify-around items-center lg:items-start">
       <Cartpage />
       {/* Order Summary */}
-      <div className="bg-white p-4 w-full lg:w-[500px] border rounded-[20px]">
+      <div className="bg-white p-4 w-[90%] lg:w-[500px] border rounded-[20px] mt-5 lg:mt-0">
         <h2 className="text-xl font-bold mb-4">Order Summary</h2>
         <div className="space-y-2">
           <div className="flex justify-between">

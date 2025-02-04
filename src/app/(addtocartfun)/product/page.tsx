@@ -16,20 +16,19 @@ const star = [
 
 export default function Products() {
   const products: IProduct[] = useSelector((state: any) => state.product);
-  // const items = products.slice(0,6)
 
   return (
-    <main className=" pt-20 lg:pt-36">
-      <div className="flex flex-col  lg:flex-row lg:flex-wrap justify-center items-center gap-6">
+    <main className="mt-28">
+      <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-around">
         {products.map((data: any, i: any) => {
           return (
             <div key={i} className=" flex-shrink-0  w-[283px] ">
               <Link href={`/product/${data.slug}`}>
                 <div className=" md:w-[283px]  h-[290px] bg-[#F0EEED] rounded-[20px]">
                   <Image
-                    src={data.image}
+                    src={data.image[0]}
                     alt={data.title}
-                    className="w-full h-full rounded-[20px]"
+                    className="w-[290px] h-[290px] rounded-[20px]"
                     width={100}
                     height={100}
                   />
